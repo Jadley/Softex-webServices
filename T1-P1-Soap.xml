@@ -1,0 +1,33 @@
+Requisição de dados bancarios
+
+Post / consultaCliente HTTP/1.1
+Host: www.meubanco.com.br 
+content-Type: application/soap+xml; charset=utf-8 
+content-Lenght: nnn 
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body xmlns:m="http://www.meubanco.com.br/consulta">
+<m:consultaRequest>
+<m:numeroConta>956432156786</m:numeroConta>
+<m:cpf>192144567-34</m:cpf>
+<m:senha>minhasenha123</m:senha>
+</m:consultaRequest>
+</soap:Body>
+</soap:Envelope>
+
+Resposta
+HTTP/1.1 200 ok
+content-Type: application/soap+xml; charset=utf-8 
+content-Lenght: nnn 
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body xmlns:m="http://www.meubanco.com.br/consulta">
+<m:consultaResponse>
+<m:nome>Jadley Felipe</m:nome>
+<m:saldo>R$ 5000,00</m:saldo>
+<m:extrato>-300,00</m:extrato>
+</m:consultaResponse>
+</soap:Body>
+</soap:Envelope>
